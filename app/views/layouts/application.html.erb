@@ -10,6 +10,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
@@ -21,11 +22,13 @@
       <li class="active"><%= link_to "Discover"%></li>
       <li><%= link_to 'Start a campaign'%></li>
       <li><%= link_to 'About Us'%></li>
-	  <li></li>   
+	  <li>
+<%= link_to "Signout", destroy_user_session_path, method: :delete %></li>   
      
     </ul>
   </div>
 </nav>
+
 <%= yield %>
 
 </body>
