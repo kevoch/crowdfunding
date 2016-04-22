@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <strong>Campaign title:</strong>
+  <%= @project.campaign_title %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <% @projects.images.each do |x|%>
+  <%= image_tag x.url%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @project.category %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @project.address %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <strong>Video upload:</strong>
+  <%= @project.video_upload %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @project.summary %>
+</p>
+
+<p>
+  <strong>Amount needed:</strong>
+  <%= @project.amount_needed %>
+</p>
+
+<p>
+  <strong>Amount achieved:</strong>
+  <%= @project.amount_achieved %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+<%= link_to "Delete", project_path(@project.id), method: :delete%>

@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 758fae62a13c70abf0a781ba597ebda3159492dd
+  specs:
+    carrierwave (0.11.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,15 +100,20 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    oauth2 (1.0.0)
+    oauth2 (1.1.0)
       faraday (>= 0.8, < 0.10)
-      jwt (~> 1.0)
+      jwt (~> 1.0, < 1.5.2)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
-      rack (~> 1.2)
+      rack (>= 1.2, < 3)
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
+    omniauth-digitalocean (0.2.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.4.1)
       jwt (~> 1.5.2)
       multi_json (~> 1.3)
@@ -181,12 +196,15 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  carrierwave!
   coffee-rails (~> 4.1.0)
   devise
   figaro
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
+  omniauth-digitalocean
+  omniauth-facebook
   omniauth-google-oauth2
   pg (~> 0.15)
   rails (= 4.2.6)
