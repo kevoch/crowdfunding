@@ -23,8 +23,12 @@
       <li><%= link_to "Discover", projects_path%></li>
       <li><%= link_to 'Start a campaign', new_project_path%></li>
       <li><%= link_to 'About Us'%></li>
-	  <li>
-<%= link_to "Signout", destroy_user_session_path, method: :delete %></li>   
+      	 <% if signed_in? %>
+      <li><%= link_to "My Profile"%> </li> 
+	  <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li> 
+	   <% else %>
+       <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <%end%>
      
     </ul>
   </div>
