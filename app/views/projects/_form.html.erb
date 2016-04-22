@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :images %><br>
-    <%= f.text_field :images %>
+    <%= f.file_field :photos, multiple: true %><br />
+
   </div>
   <div class="field">
     <%= f.label :category %><br>
