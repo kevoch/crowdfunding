@@ -5,13 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-<%= link_to "Signout", destroy_user_session_path, method: :delete %>
 
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-
+<link href='http://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">NextFund</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "Discover"%></li>
+      <li><%= link_to 'Start a campaign'%></li>
+      <li><%= link_to 'About Us'%></li>
+	  <li>
+<%= link_to "Signout", destroy_user_session_path, method: :delete %></li>   
+     
+    </ul>
+  </div>
+</nav>
 
 <%= yield %>
 
