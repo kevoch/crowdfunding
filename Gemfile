@@ -47,8 +47,16 @@ end
 
 gem 'devise'
 
+
+
+gem 'carrierwave'
+
 gem 'figaro'
 
 gem 'omniauth'
 gem 'omniauth-digitalocean'
 gem 'omniauth-facebook'
+
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
