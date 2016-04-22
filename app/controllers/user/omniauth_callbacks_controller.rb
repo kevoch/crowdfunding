@@ -6,7 +6,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def twitter
   # end
 
-  def googe_oauth2
+  def google_oauth2
 
     @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
 
@@ -17,7 +17,7 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.google_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
-    
+
   end
 
   # More info at:
