@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+
+    byebug
   end
 
   # GET /projects/1
@@ -26,6 +28,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    byebug
 
     respond_to do |format|
       if @project.save
@@ -42,6 +45,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
+      byebug
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
@@ -70,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:user_id, :campaign_title, :images, :category, :address, :deadline, :video_upload, :summary, :amount_needed, :amount_achieved)
+      params.require(:project).permit(:user_id, :campaign_title, {images: []}, :category, :address, :deadline, :video_upload, :summary, :amount_needed, :amount_achieved)
     end
 end
