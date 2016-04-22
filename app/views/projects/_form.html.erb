@@ -1,0 +1,57 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   
+    <%= f.hidden_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :campaign_title %><br>
+    <%= f.text_field :campaign_title %>
+  </div>
+  <div class="field">
+    <%= f.label :images %><br>
+    <%= f.text_field :images %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline %><br>
+    <%= f.date_select :deadline %>
+  </div>
+  <div class="field">
+    <%= f.label :video_upload %><br>
+    <%= f.text_field :video_upload %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br>
+    <%= f.text_area :summary %>
+  </div>
+  <div class="field">
+    <%= f.label :amount_needed %><br>
+    <%= f.number_field :amount_needed %>
+  </div>
+  <div class="field">
+    <%= f.label :amount_achieved %><br>
+    <%= f.number_field :amount_achieved %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
