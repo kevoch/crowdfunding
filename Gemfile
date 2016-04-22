@@ -46,3 +46,9 @@ group :development do
 end
 
 gem 'devise'
+
+gem 'figaro'
+
+gem 'omniauth'
+gem 'omniauth-digitalocean'
+gem 'omniauth-facebook'
