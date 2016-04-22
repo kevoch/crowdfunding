@@ -12,7 +12,9 @@
 
 <p>
   <strong>Images:</strong>
-  <%= @project.images %>
+  <% @projects.images.each do |x|%>
+  <%= image_tag x.url%>
+  <%end%>
 </p>
 
 <p>

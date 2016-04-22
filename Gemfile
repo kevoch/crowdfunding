@@ -49,7 +49,7 @@ gem 'devise'
 
 
 
-gem 'carrierwave'
+
 
 gem 'figaro'
 
