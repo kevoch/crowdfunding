@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+ # See how all your routes lay out with "rake routes".
+
   resources :projects
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
 
   # You can have the root of your site routed with "root"
   root 'homepage#index'
