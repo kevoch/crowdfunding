@@ -24,7 +24,11 @@
       <tr>
         <td><%= project.user_id %></td>
         <td><%= project.campaign_title %></td>
-        <td><%= project.images %></td>
+        <td><% @projects.each do |project| %>
+          <% project.images.each do |x| %>
+          <%= image_tag x.url %>
+          <% end %>
+          <% end %></td>
         <td><%= project.category %></td>
         <td><%= project.address %></td>
         <td><%= project.deadline %></td>
@@ -41,5 +45,10 @@
 </table>
 
 <br>
+
+
+
+
+
 
 

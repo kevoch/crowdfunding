@@ -47,4 +47,4 @@ end
 
 gem 'devise'
 
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
