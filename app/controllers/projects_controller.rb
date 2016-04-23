@@ -6,7 +6,6 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    byebug
   end
 
   # GET /projects/1
@@ -28,7 +27,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    byebug
+ 
 
     respond_to do |format|
       if @project.save
