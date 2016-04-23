@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<%if !@messages.blank?%>
+  <%@messages.each do |x|%>
+    <p><%=x%></p>
+  <%end%>
+<%end%>
 
 <p>
   <strong>User:</strong>
@@ -51,6 +56,10 @@
   <strong>Amount achieved:</strong>
   <%= @project.amount_achieved %>
 </p>
+
+
+
+<%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
