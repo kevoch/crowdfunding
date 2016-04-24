@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :projects, through: :transactions
   has_many :transactions
+  acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

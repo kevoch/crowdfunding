@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
  # See how all your routes lay out with "rake routes".
 
-  resources :projects
+  resources :projects do
+    member do
+      put 'like', to: "projects#upvote"
+      put 'dislike', to: "projects#downvote"
+    end
+  end
 
 
   resources :users
