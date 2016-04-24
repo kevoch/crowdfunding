@@ -49,7 +49,7 @@
 
 <p>
   <strong>Amount needed:</strong>
-  <%= @project.amount_needed %>
+  <%= number_with_delimiter(@project.amount_needed) %>
 </p>
 
 <p>
@@ -76,7 +76,11 @@
 <% end %>
 
 <br>
-<%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to "Delete", project_path(@project.id), method: :delete%>
+  <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
+<% if can? :update, @project %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+  <%= link_to 'Back', projects_path %>
+<% if can? :destroy, @project %>
+  <%= link_to "Delete", project_path(@project.id), method: :delete%>
+<% end %>

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :projects, through: :transactions
+	has_many :projects
   has_many :transactions
   acts_as_voter
   # Include default devise modules. Others available are:
