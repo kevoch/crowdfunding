@@ -65,3 +65,5 @@ gem 'braintree'
 gem 'jquery-turbolinks'
 
 gem 'acts_as_votable', '~> 0.10.0'
+
+gem 'cancancan', '~> 1.10'

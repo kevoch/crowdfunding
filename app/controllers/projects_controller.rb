@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+    
+
 
   # GET /projects
   # GET /projects.json
@@ -20,6 +22,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+        authorize! :update, @project
+
   end
 
   # POST /projects
@@ -65,14 +69,28 @@ class ProjectsController < ApplicationController
 
   def upvote
     @project = Project.find(params[:id])
+   if !current_user.voted_up_on? @project 
     @project.upvote_by current_user
-    redirect_to :back
+   else
+    @project.downvote_by current_user
+   end
+   respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+      format.js { render :layout => false }
+     end
   end
 
   def downvote
     @project = Project.find(params[:id])
     @project.downvote_by current_user
-    redirect_to :back
+     respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+      format.js { render :layout => false }
+
+     end
+    # redirect_to :back
   end
 
 
