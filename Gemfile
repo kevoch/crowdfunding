@@ -71,4 +71,5 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'public_activity'
 

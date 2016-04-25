@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'activities/index'
+
   get 'transactions/new'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
@@ -18,6 +20,8 @@ Rails.application.routes.draw do
   match 'users/:id' => 'users#show', via: :get
 
   resources :transactions, only: [:new, :create]
+
+  resources :activities
 
 
   # The priority is based upon order of creation: first created -> highest priority.

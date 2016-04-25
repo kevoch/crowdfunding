@@ -23,6 +23,15 @@ class TransactionsController < ApplicationController
       updated_amount  = current_amount + params[:transaction][:amount].to_i
 
       @project.update(amount_achieved: updated_amount)
+
+      if (updated_amount/@project.amount_needed) >= 0.95
+            @project.create_activity :donation_milestone, owner: current_user, recipient: @project.user
+  
+      end
+
+
+
+
       # current_user.purchase_cart_movies!
       redirect_to project_path(@project), notice: "Congratulations! Your transaction has been successfully processed!"
 
@@ -31,9 +40,6 @@ class TransactionsController < ApplicationController
       if result.errors.present?
         @messages = []
         result.errors.each {|x| @messages << x.message}
-
-        byebug
-
         @transaction = Transaction.new
         redirect_to project_path(@project), notice: @messages.join(" ")
       else
