@@ -1,9 +1,18 @@
 class UsersController < ApplicationController
+
+
 	def show
 		@user = User.find(params[:id])
 	end
 
 	def edit 
+		
+		@user = User.find(params[:id])
+
+		unless current_user.id == @user.id
+			authorize! :update, @user
+		end
+
 		@user = current_user
 	end 
 
