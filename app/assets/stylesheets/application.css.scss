@@ -58,8 +58,8 @@ h3{
 }
 
 div.img{
-	width: 40vw;
-	height: 20vw;
+	width: 200px;
+	height: 200px;
 	background-size: cover;
 	float: center;
 	display: table-cell;
@@ -88,3 +88,13 @@ img.bookings {
 	right: 35%;
 }
 
+/*carousel*/
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+ol.carousel-indicators li{
+	border: 1px solid;
+	color: black;
+	opacity: 0.5;
+}
