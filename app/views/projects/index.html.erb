@@ -34,57 +34,97 @@
     </figure>
 </div>
 
-<table style="width:100%;">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Campaign title</th>
-      <th>Images</th>
-      <th>Category</th>
-      <th>Address</th>
-      <th>Deadline</th>
-      <th>Video upload</th>
-      <th>Summary</th>
-      <th>Amount needed</th>
-      <th>Amount achieved</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.user_id %></td>
-        <td><%= project.campaign_title %></td>
-        <td><% @projects.each do |project| %>
-          <% project.images.each do |x| %>
-          <%= image_tag x.url(:thumb) %>
+<div class="container">
+ 
+            <div id="myCarousel" class="carousel slide">
+
+                      <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+              </ol>
+                
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class ="container">
+                             <div class="row">
+                              <h1 class="description">Education.</h1>
+                              <% @projects.each do |p| %>
+                              <div class= "col-md-3"> 
+                               <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+                                 <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+                                 <h5><%= p.campaign_title %> </h5>
+                               </div>
+                               <% end %>
+                             </div>
+                           </div>
+
+                           <% @projects.each do |p| %>
+                           <%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+                           <% end %>
+
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+            <!--/myCarousel-->
+</div>
+
+
+<div class ="container">
+ <div class="row">
+  <h1 class="description">Discover Now.</h1>
+  <% @projects.each do |p| %>
+  <div class= "col-md-6"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+     <h5><%= p.campaign_title %> </h5>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
+
+
+
+<div class="carousel slide" id="screenshot-carousel" data-rise="carousel"><!-- Variable Carousel -->
+      <ol class="carousel-indicators">
+        <% @projects.each_with_index do |p, index| %>
+          <% if index == 0 %>
+            <li data-target="screenshot-carousel" data-slide-to="#{index}" class="active"></li>            
+          <% else %>
+            <li data-target="screenshot-carousel" data-slide-to="#{index}"></li>
           <% end %>
-          <% end %></td>
-        <td><%= project.category %></td>
-        <td><%= project.address %></td>
-        <td><%= project.deadline %></td>
-        <td><%= video_tag(project.video.url, :controls =>true, :width=>200, :height=>150)%></td>
-        <td><%= project.summary %></td>
-        <td><%= number_with_delimiter(project.amount_needed, :delimiter => ',') %></td>
-        <td><%= project.amount_achieved %></td>
-        <td><%= link_to 'Show', project %></td>
-       <% if can? :update, project %>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-       <% end %> 
-       <% if can? :destroy, project %>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-       <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-
-
-
-
-
+        <% end %>
+      </ol>
+      <div class="carousel-inner">
+        <% @projects.each_with_index do |p, index| %>
+          <% if index == 0 %>
+            <div class="item active">
+              <%= image_tag p.images.first.url(:thumb) %>
+            </div>
+          <% else %>
+            <div class="item">
+              <%= image_tag p.images.first.url(:thumb) %>
+            </div>
+          <% end %>            
+        <% end %>
+      </div>
+      <a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div><!-- End Variable Carousel -->
