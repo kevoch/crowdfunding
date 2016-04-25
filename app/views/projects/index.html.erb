@@ -32,7 +32,7 @@
         <td><%= project.category %></td>
         <td><%= project.address %></td>
         <td><%= project.deadline %></td>
-        <td><%= project.video_upload %></td>
+        <td><%= video_tag(project.video.url, :controls =>true, :width=>200, :height=>150)%></td>
         <td><%= project.summary %></td>
         <td><%= number_with_delimiter(project.amount_needed, :delimiter => ',') %></td>
         <td><%= project.amount_achieved %></td>
