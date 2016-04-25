@@ -58,9 +58,25 @@
 </p>
 
 
+<br>
+<% if !current_user.voted_up_on? @project%>
 
+    <%= link_to like_project_path(@project), method: :put do%>
+      Like
+      <%= @project.get_upvotes.size%>
+    <% end %>
+
+<% else %>
+
+    <%= link_to dislike_project_path(@project), method: :put do%>
+      Like
+      <%= @project.get_upvotes.size%>
+    <% end %>
+
+<% end %>
+
+<br>
 <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
-
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 <%= link_to "Delete", project_path(@project.id), method: :delete%>
