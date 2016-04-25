@@ -13,7 +13,7 @@
 <p>
   <strong>Images:</strong>
   <% @projects.images.each do |x|%>
-  <%= image_tag x.url%>
+  <%= image_tag x.url(:thumb)%>
   <%end%>
 </p>
 
