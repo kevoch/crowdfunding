@@ -21,19 +21,22 @@
     <div class="navbar-header">
       <a class="navbar-brand">NextFund</a>
     </div>
-    <ul class="nav navbar-nav" style="float:right;">
-      <li><%= link_to "Home", root_path%></li>
-      <li><%= link_to "Discover", projects_path%></li>
-      <li><%= link_to 'Start a campaign', new_project_path%></li>
-      <li><%= link_to 'About Us'%></li>
-      	 <% if signed_in? %>
-      <li><%= link_to "My Profile", user_path(current_user)%> </li>
-	  <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
-	   <% else %>
-       <li><%= link_to 'Sign in', new_user_session_path %></li>
-        <%end%>
 
+    <ul class="nav navbar-nav" style="float:right;">
+      <li><%= link_to "Home", root_path, class:"home-navbar"%></li>
+      <li><%= link_to "Discover", projects_path, class:"home-navbar"%></li>
+      <li><%= link_to 'Start a campaign', new_project_path, class:"home-navbar"%></li>
+      <li><%= link_to 'About Us', root_path, class:"home-navbar"%></li> <!--to add static page route for about us-->
+
+      <% if signed_in? %>
+        <li><%= link_to "My Profile", user_path(current_user), class:"home-navbar"%> </li>
+	      <li><%= link_to "Signout", destroy_user_session_path, method: :delete, class:"home-navbar" %></li>
+	    <% else %>
+        <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal">Sign Up</button></li>
+        <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal1">Log In</button></li>
+      <%end%>
     </ul>
+
   </div>
 </nav>
 
@@ -43,4 +46,33 @@
 </html>
 
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "devise/registrations/new" %>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade" id="myModal1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Log In</h4>
+      </div>
+      <div class="modal-body1">
+        <%= render "devise/sessions/new" %>
+      </div>
+    </div>
+  </div>
+</div>
