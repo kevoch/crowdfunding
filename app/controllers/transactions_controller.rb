@@ -23,10 +23,10 @@ class TransactionsController < ApplicationController
       updated_amount  = current_amount + params[:transaction][:amount].to_i
 
       @project.update(amount_achieved: updated_amount)
-
-      if (updated_amount/@project.amount_needed) >= 0.95
+      donation_percentage = @project.amount_achieved.to_f/@project.amount_needed.to_f
+    
+      if (donation_percentage < 1) && (0.95 < donation_percentage)       
             @project.create_activity :donation_milestone, owner: current_user, recipient: @project.user
-  
       end
 
 
