@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Crowdfunding</title>
+  <link rel="icon" type="image/png" href="https://files.slack.com/files-pri/T02Q6C0P2-F135Y0PRS/_small_nextfund_logo.jpg">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -30,7 +31,8 @@
 	      <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
 	  <% else %>
         <!-- Trigger the modal with a button -->
-        <li><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Click Here To Sign Up</button></li>
+        <li><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Sign Up</button></li>
+        <li><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Log In</button></li>
     <%end%>
 
     </ul>
@@ -44,7 +46,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
   
     <!-- Modal content-->
     <div class="modal-content">
@@ -58,6 +60,9 @@
           <!-- <label for="email">Username:</label> -->
           <!-- <input type="email" class="form-control" id="username"> -->
         <!-- </div> -->
+      </div>
+      <div class="modal-body">
+        <%= render "devise/sessions/new" %>
       </div>
       
       <div class="checkbox">

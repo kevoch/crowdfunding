@@ -1,12 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-    
+
 
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+
   end
 
   # GET /projects/1
@@ -29,6 +30,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+
+
+
     @user = current_user
     @project = @user.projects.new(project_params)
     respond_to do |format|
@@ -45,8 +49,8 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    byebug
     respond_to do |format|
-
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
@@ -69,7 +73,7 @@ class ProjectsController < ApplicationController
 
   def upvote
     @project = Project.find(params[:id])
-   if !current_user.voted_up_on? @project 
+   if !current_user.voted_up_on? @project
     @project.upvote_by current_user
    else
     @project.downvote_by current_user
@@ -111,6 +115,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:user_id, :campaign_title, {images: []}, :category, :address, :deadline, :video_upload, :summary, :amount_needed, :amount_achieved)
+      params.require(:project).permit(:user_id, :campaign_title, {images: []}, :category, :address, :deadline, :video, :summary, :amount_needed, :amount_achieved)
     end
 end
