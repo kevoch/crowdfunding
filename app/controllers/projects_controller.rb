@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+    
+
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
-
-    byebug
   end
 
   # GET /projects/1
@@ -22,14 +22,15 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+        authorize! :update, @project
+
   end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-    byebug
-
+    @user = current_user
+    @project = @user.projects.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -45,7 +46,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
-      byebug
+
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
@@ -65,6 +66,42 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @project = Project.find(params[:id])
+   if !current_user.voted_up_on? @project 
+    @project.upvote_by current_user
+   else
+    @project.downvote_by current_user
+   end
+   respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+      format.js { render :layout => false }
+     end
+  end
+
+  def downvote
+    @project = Project.find(params[:id])
+    @project.downvote_by current_user
+     respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+      format.js { render :layout => false }
+
+     end
+    # redirect_to :back
+  end
+
+
+
+
+
+
+
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

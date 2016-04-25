@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<%if !@messages.blank?%>
+  <%@messages.each do |x|%>
+    <p><%=x%></p>
+  <%end%>
+<%end%>
 
 <p>
   <strong>User:</strong>
@@ -44,7 +49,7 @@
 
 <p>
   <strong>Amount needed:</strong>
-  <%= @project.amount_needed %>
+  <%= number_with_delimiter(@project.amount_needed) %>
 </p>
 
 <p>
@@ -52,6 +57,20 @@
   <%= @project.amount_achieved %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to "Delete", project_path(@project.id), method: :delete%>
+
+<br>
+    <%= link_to like_project_path(@project), :remote => true, method: :put, class: 'vpos' do%>
+      Like
+     <span class="vcount"><%= @project.get_upvotes.size%></span> 
+    <% end %>
+
+
+<br>
+  <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
+<% if can? :update, @project %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+<% end %>
+  <%= link_to 'Back', projects_path %>
+<% if can? :destroy, @project %>
+  <%= link_to "Delete", project_path(@project.id), method: :delete%>
+<% end %>

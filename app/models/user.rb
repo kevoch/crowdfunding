@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :projects
+  has_many :transactions
+  acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -36,10 +38,10 @@ class User < ActiveRecord::Base
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.first_name = auth.info.name
-        user.remote_avatar_url = auth.info.image
-        
+        user.remote_avatar_url = auth.info.image.gsub('http://','https://')
+
       end
-      
+
   end
 
 end
