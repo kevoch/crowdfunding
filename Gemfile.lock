@@ -208,8 +208,8 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
-  mini_magick
   jquery-turbolinks
+  mini_magick
   omniauth
   omniauth-digitalocean
   omniauth-facebook
