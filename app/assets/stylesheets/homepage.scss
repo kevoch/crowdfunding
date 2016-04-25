@@ -300,3 +300,26 @@ figure.snip1091:hover figcaption:after,
 figure.snip1091.hover figcaption:after {
   width: 200%;
 }
+
+/*-----------------------*/
+/*SIGN IN, LOG IN BUTTONS*/
+
+.btn-modal{
+  background-color:transparent !important;
+  color:lightgray !important;
+  border: none !important;
+  padding-top:15px !important;
+  padding-bottom:15px !important;
+  font-size: 13px !important;
+}
+.btn-modal:hover{
+  color:white !important;
+  }
+  
+.navbar-brand {
+    color: lightgray !important;
+}
+
+.home-navbar{
+  color:lightgray !important;
+}
