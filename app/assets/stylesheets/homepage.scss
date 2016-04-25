@@ -44,6 +44,9 @@
   min-height: 500px;
   letter-spacing: 2px;
   font-family: "Montserrat", sans-serif;
+  padding-top: 120px; 
+  padding-bottom: 150px;
+
 }
 .hero h1 {
   font-size: 50px;
@@ -62,7 +65,7 @@
 
 .about{
   display:block;
-  width: 1300px;
+  width: 1400px;
   height:500px;
   text-align: center;
   margin:auto;
@@ -125,7 +128,7 @@
   display: block;
   margin:auto;
   float: left;
-  margin-left: 50px;
+  margin-left: 110px;
   color:#36454f;
   font-family: "Montserrat", sans-serif;
 }
@@ -154,7 +157,7 @@
   display: block;
   margin:auto;
   float: left;
-  margin-left: 50px;
+  margin-left: 110px;
   color:#36454f;
   font-family: "Montserrat", sans-serif;
 }
@@ -189,11 +192,11 @@
 
 .category{
 	display:block;
-	width: 1000px;
+	width: 1650px;
 	height:700px;
 	text-align: center;
   margin:auto;
-  padding-top: 50px;
+  padding-top: 100px;
   text-transform: uppercase;
 
 
@@ -230,10 +233,9 @@ figure.snip1091 {
   position: relative;
   float: left;
   margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
-  max-height: 310px;
-  width: 100%;
+  min-width: 170px;
+  max-width: 290px;
+  max-height: 260px;
   overflow: hidden;
   text-align: center;
   background: #000000;
