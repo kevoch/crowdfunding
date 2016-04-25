@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :category
       t.string :address
       t.date :deadline
-      t.string :video_upload
+      t.string :video
       t.string :summary
       t.integer :amount_needed
       t.integer :amount_achieved
