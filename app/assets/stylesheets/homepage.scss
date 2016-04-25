@@ -2,8 +2,313 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*---------------------*/
+/* VIDEO */
+
+.hero {
+  position: relative;
+  background:none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding-top: 130px;
+  min-height: 500px;
+  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.photo {
+  position: absolute;
+  object-fit: contain;
+  z-index: -5;
+  bottom: 0px;
+  left: 0px;
+  /*background-image: url("https://a1.muscache.com/airbnb/upcoming_reservations/2x1/5_keys.jpg");*/
+  /*width: 688px;*/
+  width: 100%;
+  /*height: 344px;*/
+}
+
+.hero {
+  position: relative;
+  background:none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  padding-top: 130px;
+  min-height: 500px;
+  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+}
+.hero h1 {
+  font-size: 50px;
+  line-height: 1.3;
+}
+.hero h1 span {
+  font-size: 20px;
+  color: #e8f380;
+  border-bottom: 2px solid #e8f380;
+  padding-bottom: 12px;
+  line-height: 3;
+}
+
+/*---------------------*/
+/* HOW IT WORKS */
+
+.about{
+  display:block;
+  width: 1300px;
+  height:500px;
+  text-align: center;
+  margin:auto;
+  padding-top: 50px;
+
+}
+.about h1 {
+  font-size: 35px;
+  line-height: 1.3;
+  color:#36454f;
+  font-weight:800;
+  font-family: "Montserrat", sans-serif;
+}
+.about h1 span {
+  font-size: 20px;
+  color: #4AA02C
+; border-bottom: 2px solid #4AA02C;
+  padding-bottom: 12px;
+  line-height: 3;
+}
+.about p{
+  color:rgb(128,130,132);
+  font-family: "Montserrat", sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  margin-top: 20px;
+
+}
+
+.plan{
+  float: left;
+  text-align: center;
+  display: block;
+  color:#36454f;
+  margin-left:30px;
+  font-family: "Montserrat", sans-serif;
+  
+}
+.plan_image{
+  background-image: url("https://g1.iggcdn.com/assets/site/how_it_works/prelaunch_icon-a5b6d0652dad145f20642a7e7e8ce5848cc1ab4243a358627fbfbdc7a0b918e2.png");
+  background-repeat:no-repeat;
+  background-size: 50px 50px;
+  display:block;
+  width:50px; 
+  height:50px;
+  margin:auto;
+}
+
+.plan_image1{
+  background-image: url("https://g3.iggcdn.com/assets/site/how_it_works/prelaunch-d3249eb19498a9cb0cacad681bcfcf278a6e663c8ff8a0bc51d64ab224ab2ed9.jpg");
+  background-repeat:no-repeat;
+  background-size: 370px 200px;
+  display:block;
+  width:370px; 
+  height:200px;
+  margin:auto;
+}
+
+.crowdfunding{
+  display: block;
+  margin:auto;
+  float: left;
+  margin-left: 50px;
+  color:#36454f;
+  font-family: "Montserrat", sans-serif;
+}
+
+.crowdfunding_image{
+  background-image: url("https://g1.iggcdn.com/assets/site/how_it_works/crowdfunding_icon-1c3d75ac822c98370ee7232d33efd9374aa0b834bc5535a7a962b8dfead5da26.png");
+  background-repeat:no-repeat;
+  background-size: 50px 50px;
+  display:block;
+  width:50px; 
+  height:50px;
+  margin:auto;
+}
+
+.crowdfunding_image1{
+   background-image: url("https://g1.iggcdn.com/assets/site/how_it_works/crowdfunding-a7fdf9b6d116535f083bea137f157c92820178550890f012583a801d6efee449.jpg");
+  background-repeat:no-repeat;
+  background-size: 370px 200px;
+  display:block;
+  width:370px; 
+  height:200px;
+  margin:auto;
+}
+
+.marketplace{
+  display: block;
+  margin:auto;
+  float: left;
+  margin-left: 50px;
+  color:#36454f;
+  font-family: "Montserrat", sans-serif;
+}
+
+.marketplace_image{
+  background-image: url("https://g1.iggcdn.com/assets/site/how_it_works/marketplace_icon-50606fc7ec51bd2d318480c0bc194647dd4911d0ad03a5975088841d1f6ccf5d.png");
+  background-repeat:no-repeat;
+  background-size: 50px 50px;
+  display:block;
+  width:50px; 
+  height:50px;
+  margin:auto;
+}
+
+.marketplace_image1{
+  background-image: url("https://g3.iggcdn.com/assets/site/how_it_works/marketplace-3c337f2d0dc31215f42766854bf71cf98b66e36462da087986786440a18257fd.jpg");
+  background-repeat:no-repeat;
+  background-size: 370px 200px;
+  display:block;
+  width:370px; 
+  height:200px;
+  margin:auto;
+}
+
+/*---------------------*/
+/* HOTTEST PROJECT */
 
 
+.carousel-caption{
+  top:50%;
+}
+
+.category{
+	display:block;
+	width: 1000px;
+	height:700px;
+	text-align: center;
+  margin:auto;
+  padding-top: 50px;
+  text-transform: uppercase;
 
 
+	
+}
+.category h1 {
+  font-size: 45px;
+  line-height: 1.3;
+  margin-bottom: 50px;
+  font-family: "Montserrat", sans-serif;
 
+}
+
+
+.container{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.container h3{
+  font-size: 45px;
+  line-height: 1.3;
+  margin-bottom: 50px;
+  font-weight:800;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*---------------------*/
+/* EXPLORE CATEGORIES */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+figure.snip1091 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 310px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+}
+
+figure.snip1091 * {
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  border-radius: 50px;
+}
+
+figure.snip1091 img {
+  opacity: 0.25;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 200px;
+  max-width: 100%;
+}
+
+figure.snip1091 figcaption {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  right: 30px;
+  -webkit-transform: rotate(0deg) translateY(-50%) scale(1);
+  transform: rotate(0deg) translateY(-50%) scale(1);
+  -webkit-transform-origin: center 0;
+  transform-origin: center 0;
+}
+
+
+figure.snip1091 figcaption h2 span {
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+figure.snip1091 figcaption:before,
+figure.snip1091 figcaption:after {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  content: "";
+  display: block;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+figure.snip1091 figcaption:before {
+  left: 0;
+  top: 0;
+}
+
+figure.snip1091 figcaption:after {
+  bottom: 0;
+  right: 0;
+}
+
+
+figure.snip1091:hover img{
+  opacity: 1;
+}
+
+figure.snip1091:hover figcaption{
+  -webkit-transform: rotate(-45deg) translateY(-50%) scale(0.9);
+  transform: rotate(-45deg) translateY(-50%) scale(0.9);
+}
+
+figure.snip1091:hover figcaption:before,
+figure.snip1091.hover figcaption:before,
+figure.snip1091:hover figcaption:after,
+figure.snip1091.hover figcaption:after {
+  width: 200%;
+}
