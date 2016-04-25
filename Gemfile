@@ -60,6 +60,9 @@ gem 'omniauth-facebook'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
+
+gem 'mini_magick'
+
 gem 'braintree'
 
 gem 'jquery-turbolinks'
