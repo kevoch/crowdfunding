@@ -39,7 +39,8 @@
 
 <p>
   <strong>Video upload:</strong>
-  <%= @project.video_upload %>
+
+  <%= video_tag(@project.video.url, :controls =>true, :width=>200, :height=>150)  %>
 </p>
 
 <p>
