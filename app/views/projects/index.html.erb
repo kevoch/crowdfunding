@@ -26,7 +26,7 @@
         <td><%= project.campaign_title %></td>
         <td><% @projects.each do |project| %>
           <% project.images.each do |x| %>
-          <%= image_tag x.url %>
+          <%= image_tag x.url(:thumb) %>
           <% end %>
           <% end %></td>
         <td><%= project.category %></td>

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-    
+
 
 
   # GET /projects
@@ -29,6 +29,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+
+
+
     @user = current_user
     @project = @user.projects.new(project_params)
     respond_to do |format|
@@ -46,7 +49,6 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
-
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
@@ -69,7 +71,7 @@ class ProjectsController < ApplicationController
 
   def upvote
     @project = Project.find(params[:id])
-   if !current_user.voted_up_on? @project 
+   if !current_user.voted_up_on? @project
     @project.upvote_by current_user
    else
     @project.downvote_by current_user
