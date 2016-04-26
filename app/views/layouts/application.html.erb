@@ -19,7 +19,7 @@
 <nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: transparent; border:0px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">NextFund</a>
+      <a href="/" class="navbar-brand">NextFund</a>
     </div>
 
     <div class="col-sm-3 col-md-3">
@@ -35,7 +35,7 @@
 
     <ul class="nav navbar-nav" style="float:right;">
 
-      <li><%= link_to "Home", root_path, class:"home-navbar"%></li>
+      <li><button id="news_feed_btn" class="btn btn-primary btn-md btn-modal">News Feed</button></li>
       <li><%= link_to "Discover", projects_path, class:"home-navbar"%></li>
       <li><%= link_to 'Start a campaign', new_project_path, class:"home-navbar"%></li>
       <li><%= link_to 'About Us', root_path, class:"home-navbar"%></li> <!--to add static page route for about us-->
@@ -44,7 +44,7 @@
         <li><%= link_to "My Profile", user_path(current_user), class:"home-navbar"%> </li>
 	      <li><%= link_to "Signout", destroy_user_session_path, method: :delete, class:"home-navbar" %></li>
 	    <% else %>
-        <li><button type="button" class="btn btn-primary btn-md btn-modal text-center" data-toggle="modal" data-target="#myModal">Sign Up</button></li>
+        <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal">Sign Up</button></li>
         <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal1">Log In</button></li>
       <%end%>
 
@@ -52,6 +52,33 @@
 
   </div>
 </nav>
+  
+  <table id="news_feed_table"> 
+    <tr>
+      <th>
+        <h4 id="news_feed_table_title">TNF's News Feed</h4>
+      </th>
+    </tr>
+
+    <% @activities.each do |activity| %>
+      <tr>
+        <td>
+          <div class="activity">
+          
+
+            <% if activity.key == 'project.donation_milestone'%>
+              Project <em><%= link_to activity.trackable.campaign_title, activity.trackable%></em> 's total donation has surpassed 95%! Please donate to make it happen!
+            <%else%>
+              <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
+              <%= render_activity activity%>
+            <% end %>
+             
+      
+      </div>
+    <% end %>
+        </td>
+    </tr>
+  </table>
 
 <%= yield %>
 
@@ -90,3 +117,4 @@
     </div>
   </div>
 </div>
+

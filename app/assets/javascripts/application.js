@@ -17,6 +17,9 @@
 //= require jquery_ujs
 
 $(document).ready(function() {
+  $('#news_feed_btn').click(function() {
+    $('#news_feed_table').toggle("slide");
+  });
 });
 
 
@@ -31,3 +34,5 @@ $(document).ready(function() {
 //= require turbolinks
 
 //= require_tree .
+
+
