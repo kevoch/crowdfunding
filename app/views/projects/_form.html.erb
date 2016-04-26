@@ -10,71 +10,81 @@
       </ul>
     </div>
   <% end %>
-<br>
 
-        
-      <div class="project_bg">  
-       <div class="container" id="container1" style="text-align: center;">  
-        <h1> Start a Campaign </h1>
-        <br> 
-          <div class="field">
+        <div class="field1">
           <%= f.hidden_field :user_id %>
           </div>
+      <div class="campaign_bg">
+        <h1> Start a Campaign </h1>
 
-          <div class="field">
-          <%= f.label :campaign_title %><br>
-          <%= f.text_field :campaign_title %>
-          </div>
-          <br>
-          <div class="field">
-          <%=f.file_field :images, multiple: true%><br>
-          </div>
-          <br>
-          <div class="field">
-          <%= f.label :category %><br>
-          <%= f.text_field :category %>
-          </div>
-          <br>
-          <div class="field">
-          <%= f.label :address %><br>
-          <%= f.text_field :address %>
-          </div>
-          <div class="field">
-          <%= f.label :deadline %><br>
+        <table style="width:100%; max-width: 1200px; margin:auto;">
+          <tr>
+           <th style="padding: 40px;">Title
+           <p> What do you want to raise money for?</p></th>
+              <td style="padding: 40px;"><%= f.label :campaign_title %>
+              <%= f.text_field :campaign_title, placeholder: "CAMPAIGN TITLE" %></td>
+          </tr>    
+
+          <tr>
+            <th style="padding: 40px;">Picture
+             <p>Personalzie your fundraiser by adding a picture. This image willrepresent your fundraise in our browse pages and act as yourfundraiser’s main image if you don'tadd a video.</p></th>
+              <td style="padding: 40px;">
+              <%=f.file_field :images, multiple: true%></td>
+          </tr>
+          <tr>
+          <th style="padding: 40px;"> Category
+          <p>Help people discover your fundraiser on our site.</p></th>
+          <td style="padding: 40px;">
+          <%= f.label :category %>
+          <%= f.text_field :category %></td>
+          </tr>
+          <tr>
+          <th style="padding: 40px;">Location
+          <p>Get support from your local community.</p></th>
+          <td style="padding: 40px;">
+          <%= f.label :address %>
+          <%= f.text_field :address %></td>
+          </tr>
+
+          <tr>
+          <th style="padding: 40px;">Deadline
+          <p>How long will your campaign last?</p></th>
+          <td style="padding: 40px;">
+          <%= f.label :deadline %>
           <%= f.date_select :deadline %>
-          </div>
-          <br>
-          <div class="field">
-          <%= f.file_field :video%>
-          </div>
-          <br>
-          <div class="field">
-          <%= f.label :summary %><br>
-          <%= f.text_area :summary%>
-          </div>
-          <br>
-          <div class="field">
-          <%= f.label :amount_needed %><br>
-          <%= f.number_field :amount_needed %>
-          </div>
-          <br>
+          </td>
+          </tr>
+
+          <tr>
+          <th style="padding: 40px;">Video
+          <p>Add a video to make your fundraiser more engaging</p></th>
+          <td style="padding: 40px;">
+          <%= f.file_field :video%></td>
+         </tr>
+          
+          <tr>
+          <th style="padding: 40px;">Your Story
+          <p>Tell the story about why you're running a fundraiser. </p></th>
+          <td style="padding: 40px;">
+          <%= f.label :summary %>
+          <%= f.text_area :summary%></td>
+          </tr>
+          <tr>
+          <th style="padding: 40px;">Goal
+          <p>How much do you want to raise</p></th>
+          <td style="padding: 40px;">
+          <%= f.label :amount_needed %>
+          <%= f.number_field :amount_needed %></td>
+          </tr>
+        <td>
           <div class="actions">
           <%=f.submit%>
           </div>
           <% end %>
-   
-      <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-       </div>
-    </div>
+          </td>
+        </table>
+        <%= link_to 'Back', projects_path %>
+     
+     </div>
+
   
