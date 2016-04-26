@@ -5,6 +5,7 @@
 /*---------------------*/
 /* VIDEO */
 
+
 .photo {
   position: absolute;
   object-fit: contain;
@@ -327,4 +328,33 @@ figure.snip1091.hover figcaption:after {
 
 .home-navbar{
   color:lightgray !important;
+}
+
+
+
+/*-----------------------*/
+/*news-feed-box*/
+
+#news_feed_table{
+  display:none;
+  position:absolute;
+  right:0;
+  background:rgba(255,255,255,0.5);
+  border: 10px;
+  z-index:10000;
+}
+
+#news_feed_btn:focus{
+  outline: 0 !important;
+ 
+}
+.activity{
+  padding:5px;
+  text-align: center;
+}
+#news_feed_table_title{
+  text-align:center;
+  font-weight:bold;
+  font-family: courier;
+  letter-spacing: 10px;
 }

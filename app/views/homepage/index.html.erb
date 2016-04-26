@@ -38,6 +38,34 @@
     
 </div>
 
+<div id="news_feed_btn">Click</div>
+<table id="news_feed_table"> 
+  <tr>
+    <td>
+      <h4>The Next Fund 's News Feed</h4>
+    </td>
+  </tr>
+
+  <% @activities.each do |activity| %>
+    <tr>
+      <td>
+        <div class="activity">
+        
+
+          <% if activity.key == 'project.donation_milestone'%>
+            Project <em><%= link_to activity.trackable.campaign_title, activity.trackable%></em> 's total donation has surpassed 95%! Please donate to make it happen!
+          <%else%>
+            <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
+            <%= render_activity activity%>
+          <% end %>
+           
+    
+    </div>
+  <% end %>
+      </td>
+  </tr>
+</table>
+
  <div class="container" style="padding:0px;z-index:-1; margin-top: 300px;">
   <h3>HOTTEST PROJECT</h3>
     <br>
@@ -136,4 +164,6 @@
     </figcaption>
     </figure>
 </div>
+
 </div>
+
