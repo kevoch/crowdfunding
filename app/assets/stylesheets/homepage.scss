@@ -427,15 +427,29 @@ figure.snip-shuffle:hover img{
 }
 .activity{
   padding:5px;
-  text-align: center;
+  text-align: right;
+  font-size: 18px;
+  font-family: courier;
+}
+
+.activity:hover{
+  background: lightgray;
+}
+
+.activity a:hover{
+  background: transparent;
 }
 #news_feed_table_title{
   text-align:center;
   font-weight:bold;
   font-family: courier;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
+  color:white;
 }
 
+#news_feed_table th{
+  background:black;
+}
 #shuffle-img{
   width:500px;
   height:300px;
