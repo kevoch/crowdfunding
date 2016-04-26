@@ -1,0 +1,68 @@
+<h1 class="text-center">Projects Search</h1>
+<%if @projects.blank?%>
+  <div class="container">
+      <h4>Sorry. No match found.</h4>
+      <h4>Please try again with another search parameters.</h4>
+  </div>
+<%else%>  
+
+  
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-md-6">Descriptions</th>    
+            <th colspan="6" class="col-md-6"></th>
+          </tr>
+        </thead>
+        <% @projects.each do |project| %>
+          <tbody>
+            <tr>
+              <td>
+                    <!--   <h3><%# link_to project.name, controller: "projects", action: "show", id: project.id%></h3> -->
+                        <p class="search-bullets">Campaign Title : <%= project.campaign_title%></p>
+                        <p class="search-bullets"><%= project.images%></p>
+                        <p class="search-bullets">Category : <%= project.category%></p>
+                        <p class="search-bullets">Location : <%= project.address%></p>
+                        <p class="search-bullets">Video : <%= project.video%></p>
+                        <p class="search-bullets">Summary : <%= project.summary%></p>
+                        <p class="search-bullets">Amount Needed : USD <%= project.amount_needed%></p>
+                        <p class="search-bullets">Amount Achieved : <%= project.amount_achieved%></p>
+                        <p class="search-bullets">Deadline : <%= project.deadline%></p>
+
+              </td>
+              <td>
+                                <%if !project.images.blank?%>
+                                 
+                                        <!-- Indicators -->
+                                  
+                                   <div "id=myCarousel" class="carousel slide" data-ride="carousel" style="">
+                                        
+                                        <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <%= image_tag project.imagess[0].url(:full).to_s, class: "img-mini-carousel" %>
+                                        </div>
+
+                                         <% project.images.each do |picture| %>
+                                          <div class="item">
+                                            <%= image_tag picture.url(:full).to_s, class: "img-mini-carousel" %>
+                                          </div>
+                                          <%end%>
+                                         
+                                        </div>
+                                     
+                                      </div><!-- /.carousel -->
+                                  <%end%>
+
+              </td>
+            </tr>
+        <% end %>
+          
+        </tbody>                
+      </table>
+    </div>
+  </dic>
+    
+ 
+<%end%>
