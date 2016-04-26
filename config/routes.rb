@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'activities/index'
 
-
+  get 'projects/education'
   get 'transactions/new'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
