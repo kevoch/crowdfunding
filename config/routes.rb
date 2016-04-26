@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  # See how all your routes lay out with "rake routes".
   # devise_for :users, :controllers => { :omniauth_callbacks => "user/omniauth_callbacks" }
   # resources :projects
+  post 'homepage/shuffle' => 'homepage#shuffle'
 
   get 'activities/index'
 

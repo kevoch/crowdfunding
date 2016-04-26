@@ -11,7 +11,15 @@
             <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed.webm" type='video/webm'>
           </video>
 
+          <div  id='ajax-btn'>
+            <svg>
+              <rect x="0" y="0" fill="none" width="300px" height="45"/>   
+            </svg>
+             Feeling Generous?
+          </div>
+
 </div>
+
 
 <div class="about">
   <h1 style="margin-bottom: 70px;"><span>Dream it. Plan it. Fund it. Launch it.</span><br>How it works</h1>
@@ -37,34 +45,6 @@
   </div> 
     
 </div>
-
-<div id="news_feed_btn">Click</div>
-<table id="news_feed_table"> 
-  <tr>
-    <td>
-      <h4>The Next Fund 's News Feed</h4>
-    </td>
-  </tr>
-
-  <% @activities.each do |activity| %>
-    <tr>
-      <td>
-        <div class="activity">
-        
-
-          <% if activity.key == 'project.donation_milestone'%>
-            Project <em><%= link_to activity.trackable.campaign_title, activity.trackable%></em> 's total donation has surpassed 95%! Please donate to make it happen!
-          <%else%>
-            <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
-            <%= render_activity activity%>
-          <% end %>
-           
-    
-    </div>
-  <% end %>
-      </td>
-  </tr>
-</table>
 
  <div class="container" style="padding:0px;z-index:-1; margin-top: 300px;">
   <h3>HOTTEST PROJECT</h3>
@@ -167,5 +147,78 @@
 
 
 
+<!-- Modal -->
+<div id="shuffleModal" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Thank you for your generosity!</h4>
+                <div id="loading-gif" style="display: none; text-align: center; ">
+          <img src="http://im2.ezgif.com/tmp/ezgif-2625132744.gif">
+
+      </div>
+      <div class="modal-body">
+        <div id="shuffle-image"></div>
+        <div id="shuffle-title"></div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).on('ready page:load', function(){
+  
+  $('#ajax-btn').on('click', function(event){
+    event.preventDefault();
+
+    var showLoading = function(){
+      $('#loading-gif').toggle();
+    };
+
+    var ajaxCall = function(){
+      $.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: '/homepage/shuffle',
+        // data: $('#filter-form').serialize(),
+        success: function(project){
+          console.log(project);
+          $('#loading-gif').hide();
+          $('#shuffle-title').show();
+          $('#shuffle-image').html('<figure class="snip-shuffle">' + '<img id="shuffle-img" src="'+ project.images[0].url +'">'  +
+            '<figcaption>' + "<span>" +'<a href="/projects/' + project.id + '">Click to see more & donate!</a>' + "</span>"+"</figcaption>" 
+            + "</figure>" + "<br>");
+          $('#shuffle-title').html("<div>" + "Project : " + project.campaign_title + "</div>"  +
+            "<div>" + "Category : " + project.category + "</div>" +
+            "<div>" + "Fund needed : " + project.amount_needed + "</div>" + 
+            "<div>" + "Fund size now : " + project.amount_achieved + "</div>" +
+            "<div>" + "Deadline : " + project.deadline + "</div>" +
+            "<div>" + "Fund created at: " + project.created_at + "</div>" + "<br>" 
+          );
+          
+        }
+      })
+    };
+    $('#shuffleModal').modal();
+    $('#shuffle-img').hide();
+    $('#shuffle-title').hide();
+    $('#loading-gif').css('display', 'block');
+    setTimeout(ajaxCall ,4000);
+    
+  })
+});
+</script>
+
+
+<img src="">
 
 
