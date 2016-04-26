@@ -6,9 +6,6 @@
 <%end%>
 
 
-
-
-
 <div class="carousel slide" id="screenshot-carousel" data-rise="carousel" style=" height:400px; "><!-- Variable Carousel -->
       <ol class="carousel-indicators">
         <% @projects.images.each_with_index do |p, index| %>
@@ -71,7 +68,7 @@
   </div>
   <div class="btn-group" role="group">
     <button type="button" id="following" class="btn btn-default" href="#tab5" data-toggle="tab"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-      <div class="hidden-xs">Pay Now!</div>
+      <div class="hidden-xs">Donate Now!</div>
     </button>
   </div>
 </div>
@@ -79,14 +76,13 @@
 <div class="well">
   <div class="tab-content">
     <div class="tab-pane fade in active" id="tab1">
-      <h4>Details: </h4>  
-      <p> Campaign title: <%= @project.campaign_title %></p>
-      <p> Category: <%= @project.category %></p>
-      <p> Address: <%= @project.address %></p>
-      <p> Deadline: <%= @project.deadline %></p>
-      <p> Summary: <%= @project.summary %></p>
-      <p> Amount needed: <%= number_with_delimiter(@project.amount_needed) %></p>
-      <p> Amount achieved: <%= @project.amount_achieved %></p>
+      <b> Campaign title: </b><%= @project.campaign_title %><br />
+      <b> Category: </b><%= @project.category %><br />
+      <b> Address: </b><%= @project.address %><br />
+      <b> Deadline: </b><%= @project.deadline %><br />
+      <b> Summary: </b><%= @project.summary %><br />
+      <b> Amount needed: </b><%= number_with_delimiter(@project.amount_needed) %><br />
+      <b> Amount achieved: </b><%= @project.amount_achieved %><br />
 
       <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
        <%= link_to like_project_path(@project), :remote => true, method: :put, class: 'vpos' do%>
@@ -95,116 +91,81 @@
        <% end %>
      </button>
 
-      <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
-        <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
-      </button>
-
-      <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
-        <% if can? :update, @project %>
-        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        <%= link_to "Edit", edit_project_path(@project) %>
-      <% end %>
-      </button>
-
-      <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
-        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> <%= link_to 'Back', projects_path %>
-      </button>
-
-      <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
-         <% if can? :destroy, @project %>
-         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        <%= link_to "Delete", project_path(@project.id), method: :delete%>
-      <% end %>
-      </button>
-
-   </div>
-
-   <div class="tab-pane fade in" id="tab2">
-    <p>Images:</p><br /> <% @projects.images.each do |x|%>
-    <%= image_tag x.url(:thumb), class:"show-image"%>
-    <%end%>
-  </div>
-
-  <div class="tab-pane fade in" id="tab3" style="text-align: center; width: 100%">
-    <%= video_tag(@project.video.url, :controls =>true, :width=>500, :height=>300)  %>
-  </div>
-  <div class="tab-pane fade in" id="tab4">
-  </div>
-
-  <div class="tab-pane fade in" id="tab5">
-    <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
-  </div>
-</div>
-</div>
-
-
-
-
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-
-<link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/78060/animate.min.css" rel="stylesheet" type="text/css">
-
-<div class="cool-button">
-<div class="donate">
-<button>Donate</button>
-<form name="donAmount" id="donAmount">
-  <input type="radio" value="3" name="amount" id="three">
-  <label for="three">$3</label>
-  <input type="radio" value="25" name="amount" id="twentyfive">
-  <label for="twentyfive">$25</label>
-  <input type="radio" value="100" name="amount" id="hundred">
-  <label for="hundred">$100</label>
-  <input type="radio" value="other" name="amount" id="other">
-  <label for="other">Other</label>
-</form>
-</div>
-
-<div id="custom">
-  <h2>Donation Amount</h2>
-  <form name="customDonation" id="customDonation">
-  <div class="input-group-1">
-    <label for="custom-amount">$</label>
-    <input id="custom-amount" name="custom-amount" type="text">
-    <div class="warn"></div>
-  </div>
-  </form>
-  <div class="clearfix">
-    <button class="back" type="button">Back
-      <span></span>
-      <span></span>
-      <span></span>
+     <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
+      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <%= link_to 'Donate Now', new_transaction_path + "?id=" + @project.id.to_s %>
     </button>
-    <button class="next" type="button">Next</button>
+
+    <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
+      <% if can? :update, @project %>
+      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+      <%= link_to "Edit", edit_project_path(@project) %>
+      <% end %>
+    </button>
+
+    <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> <%= link_to 'Back', projects_path %>
+    </button>
+
+    <button type="button" class="btn btn-default btn-s" style="border:none; margin-right:30px;">
+     <% if can? :destroy, @project %>
+     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+     <%= link_to "Delete", project_path(@project.id), method: :delete%>
+     <% end %>
+   </button>
+
+ </div>
+
+ <div class="tab-pane fade in" id="tab2">
+  <br /> <% @projects.images.each do |x|%>
+  <%= image_tag x.url(:thumb), class:"show-image"%>
+  <%end%>
+</div>
+
+<div class="tab-pane fade in" id="tab3" style="text-align: center; width: 100%">
+  <%= video_tag(@project.video.url, :controls =>true, :width=>500, :height=>300)  %>
+</div>
+<div class="tab-pane fade in" id="tab4">
+</div>
+
+<div class="tab-pane fade in" id="tab5">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <div class ="donation-button">
+    <div class="popover-container">
+      <div class="popover-header">
+        <span>Select a donation/funding method</span>
+      </div>
+
+      <div class="payment-buttons">
+        <div class="payment-button">
+          <i class="fa fa-cc-visa fa-2x" aria-hidden="true"></i>
+          <span class="payment-button-text"><%= link_to 'Visa Card', new_transaction_path + "?id=" + @project.id.to_s %></span>
+        </div>
+
+        <div class="payment-button">
+          <i class="fa fa-cc-mastercard fa-2x" aria-hidden="true"></i>
+          <span class="payment-button-text"><%= link_to 'Master Card', new_transaction_path + "?id=" + @project.id.to_s %></span>
+        </div>
+
+        <div class="payment-button">
+          <i class="fa fa-cc-amex fa-2x" aria-hidden="true"></i>
+          <span class="payment-button-text"><%= link_to 'Amex', new_transaction_path + "?id=" + @project.id.to_s %></span>
+        </div>
+
+        <div class="payment-button">
+          <i class="fa fa-paypal fa-2x" aria-hidden="true"></i>
+          <span class="payment-button-text"><%= link_to 'Paypal', new_transaction_path + "?id=" + @project.id.to_s %></span>
+        </div>
+
+        <div class="payment-button">
+          <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+          <span class="payment-button-text"><%= link_to 'Others', new_transaction_path + "?id=" + @project.id.to_s %></span>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
 </div>
 
 
-<section class="processing">
-<div class="check">
-  <span></span>
-  <div class="mask">
-  </div>
-  <span></span>
-</div>
-
-<div class="outer">
-  <div class="inner">
-  </div>
-  <div class="progress">
-  </div>
-</div>
-<span class="message">Processing</span>
-</section>
-
-<section id="check">
-  <h2>Confirm Payment</h2>
-  <p>Please confirm your contribution of</p>
-  <span>$8888</span>
-  <button class="next" type="button">Confirm</button>
-</section>
-
-<section id="confirm">
-  <h2>Thank You!</h2>
-  <p>Your <span class="amount">$25</span> donation will help us reach <strong>570</strong>!</p>
-</section>
-</div>
