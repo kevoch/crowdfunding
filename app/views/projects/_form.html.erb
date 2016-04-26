@@ -27,7 +27,7 @@
           </div>
           <br>
           <div class="field">
-          <input style="margin:auto; width:220px;"multiple="multiple" type="file" name="project[images][]" id="project_images">
+          <%=f.file_field :images, multiple: true%><br>
           </div>
           <br>
           <div class="field">
@@ -45,12 +45,12 @@
           </div>
           <br>
           <div class="field">
-          <input style="margin:auto; width: 200px;"type="file" name="project[video]" id="project_video">
+          <%= f.file_field :video%>
           </div>
           <br>
           <div class="field">
           <%= f.label :summary %><br>
-          <textarea style="width:500px; height:100px;"name="project[summary]" id="project_summary"></textarea>
+          <%= f.text_area :summary%>
           </div>
           <br>
           <div class="field">
@@ -59,7 +59,7 @@
           </div>
           <br>
           <div class="actions">
-          <input style="width:200px; font-weight: bold"class="button" type="submit" name="commit" value="NEW PROJECT">
+          <%=f.submit%>
           </div>
           <% end %>
    

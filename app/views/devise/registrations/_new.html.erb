@@ -34,7 +34,7 @@
   <div class="field">
     <%= f.label :profile_picture %><br />
 <br>
-    <input style="margin-left:25%"autofocus="autofocus" type="file" name="user[avatar]" id="user_avatar">
+   <%= f.file_field :avatar, autofocus: true%>
   </div>
 
   <div class="actions">
