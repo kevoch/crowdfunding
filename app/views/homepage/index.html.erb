@@ -1,5 +1,11 @@
+<!--  <div class="hero">
+    <h1><span>Discover millions of campaigns to save the world</span><br>Join and Make a Difference</h1> -->
+      <div class="overlay">
+      </div>
+
  <div class="hero" >
     <h1 style="text-shadow: rgba(0, 0, 0, 0.247059) 0px 1px 1px, rgba(0, 0, 0, 0.74902) 0px 1px 30px;"><span>Discover millions of campaigns to save the world</span><br>Join and Make a Difference</h1>
+
           <video autoplay loop="loop" preload="auto" class="photo">
             <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed.mp4" type='video/mp4'>
             <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed.webm" type='video/webm'>
@@ -32,6 +38,34 @@
     
 </div>
 
+<div id="news_feed_btn">Click</div>
+<table id="news_feed_table"> 
+  <tr>
+    <td>
+      <h4>The Next Fund 's News Feed</h4>
+    </td>
+  </tr>
+
+  <% @activities.each do |activity| %>
+    <tr>
+      <td>
+        <div class="activity">
+        
+
+          <% if activity.key == 'project.donation_milestone'%>
+            Project <em><%= link_to activity.trackable.campaign_title, activity.trackable%></em> 's total donation has surpassed 95%! Please donate to make it happen!
+          <%else%>
+            <%= link_to activity.owner.first_name, activity.owner if activity.owner %>
+            <%= render_activity activity%>
+          <% end %>
+           
+    
+    </div>
+  <% end %>
+      </td>
+  </tr>
+</table>
+
  <div class="container" style="padding:0px;z-index:-1; margin-top: 300px;">
   <h3>HOTTEST PROJECT</h3>
     <br>
@@ -47,7 +81,7 @@
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox" style="height:700px; position:relative; margin:0; padding:0; " >
+      <div class="carousel-inner" role="listbox" style="height:100%; max-height: 700px; position:relative; margin-bottom: 100px;" >
         <div class="item active" style="z-index: -1">
           <%=image_tag("photo1.jpg")%>
             <div class= "carousel-caption">
@@ -130,3 +164,8 @@
     </figcaption>
     </figure>
 </div>
+
+
+
+
+
