@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # resources :projects
 
   get 'activities/index'
+
  post 'search', to: 'search#search'
  get 'search', to: 'search#search'
+
+  get 'projects/education'
 
   get 'transactions/new'
 

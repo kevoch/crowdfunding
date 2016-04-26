@@ -216,6 +216,8 @@
   font-family: "Montserrat", sans-serif;
 
 }
+
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
 figure.snip1091 {
   font-family: 'Raleway', Arial, sans-serif;
@@ -229,13 +231,13 @@ figure.snip1091 {
   text-align: center;
   background: #000000;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  border-radius: 50px;
+  border-radius: 70px;
 }
 
 figure.snip1091 * {
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
-  border-radius: 50px;
+  border-radius: 70px;
 }
 
 figure.snip1091 img {
@@ -314,7 +316,7 @@ figure.snip1091.hover figcaption:after {
   padding-top:15px !important;
   padding-bottom:15px !important;
   font-size: 13px !important;
-  text-align: center !important;
+  
 }
 
 .btn-modal:hover{

@@ -10,46 +10,71 @@
       </ul>
     </div>
   <% end %>
+<br>
 
-  <div class="field">
+        
+      <div class="project_bg">  
+       <div class="container" id="container1" style="text-align: center;">  
+        <h1> Start a Campaign </h1>
+        <br> 
+          <div class="field">
+          <%= f.hidden_field :user_id %>
+          </div>
 
-    <%= f.hidden_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :campaign_title %><br>
-    <%= f.text_field :campaign_title %>
-  </div>
-  <div class="field">
-    <%= f.label :images %><br>
-    <%= f.file_field :images, multiple: true %><br />
-
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.date_select :deadline %>
-  </div>
-  <div class="field">
-    <%= f.label :video %><br>
-    <%= f.file_field :video %>
-  </div>
-  <div class="field">
-    <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
-  </div>
-  <div class="field">
-    <%= f.label :amount_needed %><br>
-    <%= f.number_field :amount_needed %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+          <div class="field">
+          <%= f.label :campaign_title %><br>
+          <%= f.text_field :campaign_title %>
+          </div>
+          <br>
+          <div class="field">
+          <%=f.file_field :images, multiple: true%><br>
+          </div>
+          <br>
+          <div class="field">
+          <%= f.label :category %><br>
+          <%= f.text_field :category %>
+          </div>
+          <br>
+          <div class="field">
+          <%= f.label :address %><br>
+          <%= f.text_field :address %>
+          </div>
+          <div class="field">
+          <%= f.label :deadline %><br>
+          <%= f.date_select :deadline %>
+          </div>
+          <br>
+          <div class="field">
+          <%= f.file_field :video%>
+          </div>
+          <br>
+          <div class="field">
+          <%= f.label :summary %><br>
+          <%= f.text_area :summary%>
+          </div>
+          <br>
+          <div class="field">
+          <%= f.label :amount_needed %><br>
+          <%= f.number_field :amount_needed %>
+          </div>
+          <br>
+          <div class="actions">
+          <%=f.submit%>
+          </div>
+          <% end %>
+   
+      <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+       </div>
+    </div>
+  
