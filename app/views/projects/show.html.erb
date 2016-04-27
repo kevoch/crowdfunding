@@ -5,7 +5,7 @@
   <%end%>
 <%end%>
 
-<!-- <div class="clock-builder-output"></div> -->
+<div class="clock-builder-output flip-clock-small-wrapper"></div>
 
 
 
@@ -28,13 +28,18 @@
               <div class="carousel-caption">
               <h1><%= @projects.campaign_title%></h1>
               </div>
-              <div class="clock-builder-output"></div>
+              <div id="count-down" class="carousel-caption">
+                <div class="clock-builder-output flip-clock-small-wrapper" style="width:400px; left: 230%; top: 60%;"></div>
+              </div>
             </div>
           <% else %>
             <div class="item">
               <%= image_tag p.url(:full) %>
               <div class="carousel-caption">
               <h1><%= @projects.campaign_title%></h1>
+              </div>
+              <div id="count-down" class="carousel-caption">
+                <div class="clock-builder-output flip-clock-small-wrapper" style="width:400px; left: 230%; top: 60%;"></div>
               </div>
             </div>
           <% end %>            
