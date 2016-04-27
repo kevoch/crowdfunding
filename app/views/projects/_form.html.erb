@@ -46,7 +46,7 @@
               <td style="padding: 40px;">
               <div class="title_input">
                 <span class="glyphicon glyphicon-picture"style="font-size:30px;float:left;margin-right:30px; margin-top: 8px;margin-bottom: 10px;"></span>
-             <%=f.file_field :images, multiple: true, class:"title_bar"%>
+             <%=f.file_field :images, multiple: true, class:"title_bar", style: "padding-top:15px; padding-left:160px;" %>
               </div></td>
           </tr>
           <tr>
@@ -95,7 +95,7 @@
               <td style="padding: 40px;">
                 <div class="title_input">
                  <span class="glyphicon glyphicon-facetime-video"style="font-size:30px;float:left;margin-right:30px; margin-top: 8px;margin-bottom: 10px;"></span>
-                    <input class="title_bar" style="padding-top: 15px;padding-left: 160px;" type="file" name="project[video]" id="project_video">
+                   <%= f.file_field :video, class:"title_bar", style: "padding-top:15px; padding-left:160px;"%>
                 </div></td>
          </tr>
           
