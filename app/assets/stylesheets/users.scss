@@ -37,16 +37,21 @@
 
 .button{
 		appearance: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		outline: 0;
 		background-color: white;
 		border: 0;
 		padding: 10px 15px;
 		color: #50a3a2;
 		border-radius:6px;
-		width: 100px;
+		min-width: 100px;
+    max-width:200px;
 		cursor: pointer;
 		font-size: 18px;
 		margin-top: 15px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+
 }
 
 .bg-bubbles li {
