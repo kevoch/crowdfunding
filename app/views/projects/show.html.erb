@@ -6,76 +6,8 @@
 <%end%>
 
 <div class="clock-builder-output"></div>
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
-
-<p>
-  <strong>Campaign title:</strong>
-  <%= @project.campaign_title %>
-</p>
-
-<p>
-  <strong>Images:</strong>
-  <% @projects.images.each do |x|%>
-  <%= image_tag x.url(:thumb)%>
-  <%end%>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @project.address %>
-</p>
-
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
-
-<p>
-  <strong>Video upload:</strong>
-
-  <%= video_tag(@project.video.url, :controls =>true, :width=>200, :height=>150)  %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @project.summary %>
-</p>
-
-<p>
-  <strong>Amount needed:</strong>
-  <%= number_with_delimiter(@project.amount_needed) %>
-</p>
-
-<p>
-  <strong>Amount achieved:</strong>
-  <%= @project.amount_achieved %>
-</p>
 
 
-<br>
-    <%= link_to like_project_path(@project), :remote => true, method: :put, class: 'vpos' do%>
-      Like
-     <span class="vcount"><%= @project.get_upvotes.size%></span> 
-    <% end %>
-
-
-<br>
-  <%= link_to 'Pay Now', new_transaction_path + "?id=" + @project.id.to_s %>
-<% if can? :update, @project %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-<% end %>
-  <%= link_to 'Back', projects_path %>
-<% if can? :destroy, @project %>
-  <%= link_to "Delete", project_path(@project.id), method: :delete%>
-<% end %>
 
 <div class="carousel slide" id="screenshot-carousel" data-rise="carousel" style=" height:400px; "><!-- Variable Carousel -->
       <ol class="carousel-indicators">
