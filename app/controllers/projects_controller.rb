@@ -7,11 +7,11 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-    @environments = Project.where(category: "ENVIRONMENT").order(cached_votes_up: :desc).limit(3)
-    @communities = Project.where(category: "COMMUNITY").order(cached_votes_up: :desc).limit(3)
-    @medicals = Project.where(category: "MEDICAL").order(cached_votes_up: :desc).limit(3)
-    @educations = Project.where(category: "EDUCATION").order(cached_votes_up: :desc).limit(3)
-    @disasters = Project.where(category: "DISASTER").order(cached_votes_up: :desc).limit(3)
+    @environments = Project.where(category: "Environment").order(cached_votes_up: :desc).limit(3)
+    @communities = Project.where(category: "Community").order(cached_votes_up: :desc).limit(3)
+    @medicals = Project.where(category: "Medical").order(cached_votes_up: :desc).limit(3)
+    @educations = Project.where(category: "Education").order(cached_votes_up: :desc).limit(3)
+    @disasters = Project.where(category: "Disaster").order(cached_votes_up: :desc).limit(3)
   end
 
   # GET /projects/1
