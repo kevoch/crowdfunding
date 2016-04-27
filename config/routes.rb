@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   get 'activities/index'
 
+ post 'search', to: 'search#search'
+ get 'search', to: 'search#search'
+
   get 'projects/education'
+
   get 'transactions/new'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }

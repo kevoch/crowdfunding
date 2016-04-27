@@ -16,16 +16,28 @@
 <body>
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
- --><nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: transparent; border:0px;">
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: rgba(0, 0, 0, 0.3); border:0px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">NextFund</a>
+      <a href="/" class="navbar-brand">NextFund</a>
+    </div>
+
+    <div class="col-sm-3 col-md-3">
+        <form class="navbar-form" role="search" action="/search/" method="get">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
     </div>
 
     <ul class="nav navbar-nav" style="float:right;">
-      <li><button id="news_feed_btn" class="btn btn-primary btn-md btn-modal">News feed</button></li>
-      <li><%= link_to "Home", root_path, class:"home-navbar"%></li>
+
+      <li><button id="news_feed_btn" class="btn btn-primary btn-md btn-modal">News Feed</button></li>
       <li><%= link_to "Discover", projects_path, class:"home-navbar"%></li>
       <li><%= link_to 'Start a campaign', new_project_path, class:"home-navbar"%></li>
       <li><%= link_to 'About Us', root_path, class:"home-navbar"%></li> <!--to add static page route for about us-->
@@ -37,13 +49,11 @@
         <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal">Sign Up</button></li>
         <li><button type="button" class="btn btn-primary btn-md btn-modal" data-toggle="modal" data-target="#myModal1">Log In</button></li>
       <%end%>
+
     </ul>
 
   </div>
 </nav>
-
-
-
   
   <table id="news_feed_table"> 
     <tr>
@@ -76,6 +86,22 @@
 
 
 <!-- Modal -->
+
+<!-- <div class="">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg"> -->
+    
+      <!-- Modal content-->
+
+      <!-- <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <%# render "devise/registrations/new" %>
+        </div> -->
+
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
@@ -86,6 +112,7 @@
       </div>
       <div class="modal-body">
         <%= render "devise/registrations/new" %>
+
       </div>
       <ul class="bg-bubbles">
         <li></li>
@@ -130,6 +157,7 @@
    
   </div>
 </div>
+
 <!-- Modal -->
 <div id="shuffleModal" class="modal fade" role="dialog">
   
@@ -160,4 +188,5 @@
 
 </body>
 </html>
+
 
