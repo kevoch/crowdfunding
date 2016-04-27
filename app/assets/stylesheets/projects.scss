@@ -5,11 +5,14 @@
 
 .discover{
 	position:absolute;
-	background-color: #C1E1A6;
+	background-color: #50a3a2;
 	width:100%;
 	margin:auto;
 	padding-top: 50px;
-	height:50%;
+	height:500px;
+  color:white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+
 }
 
 .category1{
@@ -31,6 +34,7 @@
   line-height: 1.3;
   font-family: "Montserrat", sans-serif;
 
+
 }
 
 
@@ -45,7 +49,6 @@ figure.snip10911 {
   overflow: hidden;
   text-align: center;
   background: #000000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   border-radius: 70px;
 }
 
@@ -118,8 +121,9 @@ figure.snip10911:hover figcaption:before,
 figure.snip10911.hover figcaption:before,
 figure.snip10911:hover figcaption:after,
 figure.snip10911.hover figcaption:after {
-  width: 200%;
+  width: 100%;
 }
+
 
 
 
@@ -147,6 +151,7 @@ text-align: center;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
+
 
 /*index page*/
 div.col-md-4{

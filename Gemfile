@@ -53,6 +53,7 @@ gem 'figaro'
 gem 'omniauth-digitalocean'
 gem 'omniauth-facebook'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'searchkick'
 
 
 gem 'mini_magick'

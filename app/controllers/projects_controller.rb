@@ -7,7 +7,11 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-
+    @environments = Project.where(category: "ENVIRONMENT").order(cached_votes_up: :desc).limit(3)
+    @communities = Project.where(category: "COMMUNITY").order(cached_votes_up: :desc).limit(3)
+    @medicals = Project.where(category: "MEDICAL").order(cached_votes_up: :desc).limit(3)
+    @educations = Project.where(category: "EDUCATION").order(cached_votes_up: :desc).limit(3)
+    @disasters = Project.where(category: "DISASTER").order(cached_votes_up: :desc).limit(3)
   end
 
   # GET /projects/1
@@ -30,8 +34,6 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-
-
 
     @user = current_user
     @project = @user.projects.new(project_params)
@@ -104,6 +106,7 @@ class ProjectsController < ApplicationController
 
   def donation_milestone
   end
+
 
 
 
