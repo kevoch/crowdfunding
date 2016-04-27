@@ -45,13 +45,6 @@
 <div class ="container">
  <div class="row" >
   <h1 class="description" id="1" style="color:#36454f; border:none; padding-top: 50px">Education</h1><h4 style="float:right; top: 20px;"><%=link_to "See All"%></h4>
-  <% @projects.each do |p| %>
-
-
-<div class ="container" style="padding-top: 30%;">
-
- <div class="row">
-  <h1 class="description" id="1">Education.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
   <% @educations.each do |p| %>
   <div class= "col-md-4"> 
    <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
