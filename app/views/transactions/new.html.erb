@@ -23,16 +23,17 @@
             </li>
 
             <li role="presentation" class="disabled">
-              <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+              <a href="#step3" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                 <span class="round-tab">
-                  <i class="glyphicon glyphicon-usd"></i>
+                  <i class="glyphicon glyphicon-heart"></i>
                 </span>
               </a>
             </li>
+
             <li role="presentation" class="disabled">
-              <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+              <a href="#step2" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                 <span class="round-tab">
-                  <i class="glyphicon glyphicon-heart"></i>
+                  <i class="glyphicon glyphicon-usd"></i>
                 </span>
               </a>
             </li>
@@ -75,6 +76,22 @@
 
 
             <div class="tab-pane" role="tabpanel" id="step2">
+              <h3>Thank You for your generosity!</h3>
+              <div class="donateContainer">
+              <a class="donate" id="donate" href="#donate">
+              <img src="http://s32.postimg.org/ct2ypkapt/heart2.png"></img>
+              </a>
+              <img class="rays" src="http://www.thejinanfog.com/wp-content/themes/jinanfog/images/god_rays2.png"></img>
+              </div>
+              <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+              </ul>
+            </div>
+
+
+            <div class="tab-pane" role="tabpanel" id="step3">
               <h3>Donate/Fund now!</h3>
               <p>Please fill in your donation/funding amount & payment details.</p>
               <%= form_for(@transaction) do |f| %>
@@ -112,25 +129,10 @@
                 else window.onload = setupBT;
 
               </script>
+              
               <ul class="list-inline pull-right">
                 <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                 <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
-              </ul>
-            </div>
-
-
-            <div class="tab-pane" role="tabpanel" id="step3">
-              <h3>Thank You for your generosity!</h3>
-              <div class="donateContainer">
-              <a class="donate" id="donate" href="#donate">
-              <img src="http://s32.postimg.org/ct2ypkapt/heart2.png"></img>
-              </a>
-              <img class="rays" src="http://www.thejinanfog.com/wp-content/themes/jinanfog/images/god_rays2.png"></img>
-              </div>
-              <ul class="list-inline pull-right">
-                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
               </ul>
             </div>
 
