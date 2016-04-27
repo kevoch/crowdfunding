@@ -22,7 +22,7 @@
               <td>
                       <h3>Campaign : <%= link_to project.campaign_title, controller: "projects", action: "show", id: project.id%></h3>
                         <!-- <p class="search-bullets">Campaign Title : <%=  project.campaign_title%></p> -->
-                        <p class="search-bullets">Image : <%= project.images%></p>
+                        <!-- <p class="search-bullets">Image : <%= project.images.first.url%></p> -->
                         <p class="search-bullets">Category : <%= project.category%></p>
                         <p class="search-bullets">Location : <%= project.address%></p>
                         <p class="search-bullets">Video : <%= project.video%></p>
@@ -41,7 +41,7 @@
                                         
                                         <div class="carousel-inner" role="listbox">
                                         <div class="item active">
-                                            <%= image_tag project.imagess[0].url(:full).to_s, class: "img-mini-carousel" %>
+                                            <%= image_tag project.images[0].url(:full).to_s, class: "img-mini-carousel" %>
                                         </div>
 
                                          <% project.images.each do |picture| %>
