@@ -18,7 +18,7 @@
 <link href='http://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
 
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
-<nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: rgba(0, 0, 0, 0.3); border:0px;">
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: black; border:0px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="/" class="navbar-brand">NextFund</a>
@@ -38,6 +38,7 @@
     <ul class="nav navbar-nav" style="float:right;">
 
       <li><button id="news_feed_btn" class="btn btn-primary btn-md btn-modal">News Feed</button></li>
+      <li><%= link_to "Home", root_path, class:"home-navbar"%></li>
       <li><%= link_to "Discover", projects_path, class:"home-navbar"%></li>
       <li><%= link_to 'Start a campaign', new_project_path, class:"home-navbar"%></li>
       <li><%= link_to 'About Us', root_path, class:"home-navbar"%></li> <!--to add static page route for about us-->
