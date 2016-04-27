@@ -1,13 +1,13 @@
 
 .discover{
 	position:relative;
-	background-color: #0ABFBC;
+	background-color: #36454f;
 	width:100%;
 	margin:auto;
 	padding-top: 50px;
-	height:500px;
-  color:white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	height:100%;
+  color:rgb(153,153,153);
+ 
 }
 
 .category1{
@@ -17,10 +17,11 @@
   text-align: center;
   margin:auto;
   text-transform: uppercase;
+  padding-left: 20px;
    max-width: 1650px;
   min-width: 300px;
-  max-height: 1000px;
-  min-height: 500px;
+  max-height: 400px;
+  min-height: 400px;
 
 }
 
@@ -45,6 +46,7 @@ figure.snip10911 {
   text-align: center;
   background: #000000;
   border-radius: 70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 figure.snip10911 * {
@@ -60,6 +62,7 @@ figure.snip10911 img {
   left: 0;
   height: 200px;
   max-width: 100%;
+
 }
 
 figure.snip10911 figcaption {
@@ -119,26 +122,34 @@ figure.snip10911.hover figcaption:after {
   width: 100%;
 }
 
-
-.description {
-   font-weight: 800;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-
+.project_list{
+  width:100%;
+  max-width: 1400px;
+  margin:auto;
 }
 
-.row{
 
-  max-width: 1600px;
+.row{
   width: 100%;
-  padding-bottom: 100px;
   border:2px solid black;
   text-align: center;
-  text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   color:#36454f;
 }
 .col-md-4{
-  border:2px solid black;
+  border:none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  margin-left: 50px; 
+  margin-top: 50px;
+  background:transparent;
+  -webkit-transition: all 1s ease;
+  background-color: transparent;
+
 }
+
+.col-md-4:hover{
+-webkit-transform:scale(1.25);
+}
+
