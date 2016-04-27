@@ -34,3 +34,5 @@ $(document).ready(function() {
 //= require turbolinks
 //= require flipclock
 //= require_tree .
+
+
