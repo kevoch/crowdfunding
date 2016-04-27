@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery.validate
-
+//= require jquery.countdown.min
 //= require jquery_ujs
 
 $(document).ready(function() {
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 
 //= require turbolinks
-
+//= require flipclock
 //= require_tree .
 
 
