@@ -174,13 +174,13 @@ $(document).on('ready page:load', function(){
           $('#shuffle-image').html('<figure class="snip-shuffle">' + '<img id="shuffle-img" src="'+ project.images[0].url +'">'  +
             '<figcaption>' + "<span>" +'<a href="/projects/' + project.id + '">Click to see more & donate!</a>' + "</span>"+"</figcaption>" 
             + "</figure>" + "<br>");
-          $('#shuffle-title').html("<div>" + "Project : " + project.campaign_title + "</div>"  +
-            "<div>" + "Category : " + project.category + "</div>" +
-            "<div>" + "Fund needed : " + project.amount_needed + "</div>" + 
-            "<div>" + "Fund size now : " + project.amount_achieved + "</div>" +
-            "<div>" + "Deadline : " + project.deadline + "</div>" +
-            "<div>" + "Fund created at: " + project.created_at + "</div>" + "<br>" 
-          );
+          $('#shuffle-title').html('<div class="modal-text">' + "Project : " + project.campaign_title + "</div>"  +
+            '<div class="text" style="color:darkgray;">' + "Summary : " + project.summary + "</div>" +
+            '<div class="modal-text">' + "Category : " + project.category + "</div>" +
+            '<div class="modal-text">' + "Fund needed : USD " + project.amount_needed + "</div>" + 
+            '<div class="modal-text">' + "Fund size now : " + project.amount_achieved + "</div>" +
+            '<div class="modal-text">' + "Deadline : " + project.deadline + "</div>"  
+                     );
           
         }
       })

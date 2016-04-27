@@ -1,5 +1,5 @@
-<h1 class="text-center" style="font-family: verdana;">Campaign List</h1>
-
+<!-- <h1 class="text-center" style="font-family: verdana;">Search result</h1>
+ -->
 <%if @projects.blank?%>
   <div class="container">
       <h4>Sorry. No match found.</h4>
@@ -8,61 +8,39 @@
 <%else%>  
 
   
-  <div class="container"  style="margin: auto;">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="col-md-6" style="text-align: center;">Descriptions</th>    
-          </tr>
-        </thead>
-        <% @projects.each do |project| %>
-          <tbody>
-            <tr>
-              <td>
-                      <h3>Campaign : <%= link_to project.campaign_title, controller: "projects", action: "show", id: project.id%></h3>
-                        <!-- <p class="search-bullets">Campaign Title : <%=  project.campaign_title%></p> -->
-                        <!-- <p class="search-bullets">Image : <%= project.images.first.url%></p> -->
-                        <p class="search-bullets">Category : <%= project.category%></p>
-                        <p class="search-bullets">Location : <%= project.address%></p>
-                        <p class="search-bullets">Video : <%= project.video%></p>
-                        <p class="search-bullets">Summary : <%= project.summary%></p>
-                        <p class="search-bullets">Amount Needed : RM <%= project.amount_needed%></p>
-                        <p class="search-bullets">Amount Achieved : <%= project.amount_achieved%></p>
-                        <p class="search-bullets">Deadline : <%= project.deadline%></p>
+ <div class ="container">
 
-                      
-              
-                                <%if !project.images.blank?%>
-                                 
-                                        <!-- Indicators -->
-                                  
-                                   <div "id=myCarousel" class="carousel slide" data-ride="carousel" style="">
-                                        
-                                        <div class="carousel-inner" role="listbox">
-                                        <div class="item active">
-                                            <%= image_tag project.images[0].url(:full).to_s, class: "img-mini-carousel" %>
-                                        </div>
+ <div class="row">
+  <h1 class="description" id="1">Search results.</h1><h4 style="padding-left: 90%; top: 20px;"></h4>
+  <% @projects.each do |p| %>
+      <div class= "col-md-4"> 
+       <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+         <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+         <h2><%= p.campaign_title.upcase %></h2>
+         <p class="project-summary"><b>Summary: </b><%= truncate(p.summary, :length => 150) %><%= link_to "(read more)", project_path(p)%></p>
+         <p class="project-donation"><b>Amount needed: </b> USD <%= number_with_delimiter(p.amount_needed) %> </p>
+         <p class="project-donation"><b>Amount pledged: </b>
+          <% if p.amount_achieved == nil%>
+            USD 0
+          <% else %>
+            USD <%= number_with_delimiter(p.amount_achieved) %> </p>
+          <% end %>
+         <div class="task-status">
+      <div class="status-bar">
+        <div class="status-track">
+           <%perc =number_to_percentage((p.amount_achieved.to_f/p.amount_needed.to_f)*100, precision: 0)%>
+          <span class="status-text"><%=perc%></span>
+          <div class="status-fill" style="width:<%=perc%>"></div>
+        </div>
+      </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
 
-                                         <% project.images.each do |picture| %>
-                                          <div class="item">
-                                            <%= image_tag picture.url(:full).to_s, class: "img-mini-carousel" %>
-                                          </div>
-                                          <%end%>
-                                         
-                                        </div>
-                                     
-                                      </div><!-- /.carousel -->
-                                  <%end%>
-
-              </td>
-            </tr>
-        <% end %>
-          
-        </tbody>                
-      </table>
-    </div>
-  </dic>
-    
- 
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
 <%end%>
+

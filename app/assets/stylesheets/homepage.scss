@@ -408,6 +408,12 @@ figure.snip-shuffle figcaption:after {
 figure.snip-shuffle:hover img{
   opacity: 1;
 }
+
+
+.modal-text{
+  font-size: 15px;
+  color: darkgray;
+}
 /*-----------------------*/
 /*SIGN IN, LOG IN BUTTONS*/
 
@@ -481,7 +487,7 @@ figure.snip-shuffle:hover img{
 }
 
 #news_feed_table th{
-  background:black;
+  background:darkseagreen;
 }
 #shuffle-img{
   width:500px;
