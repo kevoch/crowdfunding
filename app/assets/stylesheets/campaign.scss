@@ -38,6 +38,7 @@ table {
   /* Firefox 5-15 */
   -o-animation: colorBackground 20s infinite;
   /* Opera 12.00 */
+
 }
 
 @keyframes colorBackground {
@@ -168,6 +169,7 @@ table {
 	background-color: transparent;
 	padding-top:15px;
 	padding-bottom:15px;
+  margin-top: 0;
 	margin:auto;
 }
 
