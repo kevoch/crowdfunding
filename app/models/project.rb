@@ -8,4 +8,6 @@ class Project < ActiveRecord::Base
 	mount_uploaders :images, ImagesUploader
 	mount_uploader :video, VideoUploader
 	acts_as_votable
+
+	searchkick
 end
