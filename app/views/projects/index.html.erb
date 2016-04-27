@@ -45,6 +45,145 @@
         </figcaption>
         </figure>
     </div>
-
 </div> 
+
+<div class ="container" style="padding-top: 25%;">
+ <div class="row">
+  <h1 class="description">Education.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
+  <% @projects.each do |p| %>
+  <div class= "col-md-4"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+     <h2><%= p.campaign_title %> </h2>
+     <h4 class="text"><b>Summary: </b><%= p.summary %> </h4>
+     <h4><b>Amount_needed: </b><%= p.amount_needed %> </h4>
+     <h4><b>amount_achieved: </b><%= p.amount_achieved %> </h4>
+     <div class="task-status">
+  <div class="status-bar">
+    <div class="status-track">
+      <span class="status-text">{{status}}</span>
+      <div class="status-fill" style="width:{{status}}"></div>
+    </div>
+  </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
+
+<div class ="container">
+ <div class="row">
+  <h1 class="description">Community.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
+  <% @projects.limit(3).each do |p| %>
+  <div class= "col-md-4"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+     <h2><%= p.campaign_title %> </h2>
+     <h4 class="text"><b>Summary: </b><%= p.summary %> </h4>
+     <h4><b>Amount_needed: </b><%= p.amount_needed %> </h4>
+     <h4><b>amount_achieved: </b><%= p.amount_achieved %> </h4>
+     <div class="task-status">
+  <div class="status-bar">
+    <div class="status-track">
+      <span class="status-text">{{status}}</span>
+      <div class="status-fill" style="width:{{status}}"></div>
+    </div>
+  </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
+
+<div class ="container">
+ <div class="row">
+  <h1 class="description">Environment.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
+  <% @projects.limit(3).each do |p| %>
+  <div class= "col-md-4"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+     <h2><%= p.campaign_title %> </h2>
+     <h4 class="text"><b>Summary: </b><%= p.summary %> </h4>
+     <h4><b>Amount_needed: </b><%= p.amount_needed %> </h4>
+     <h4><b>amount_achieved: </b><%= p.amount_achieved %> </h4>
+     <div class="task-status">
+  <div class="status-bar">
+    <div class="status-track">
+      <span class="status-text">{{status}}</span>
+      <div class="status-fill" style="width:{{status}}"></div>
+    </div>
+  </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
+
+<div class ="container">
+ <div class="row">
+  <h1 class="description">Medical.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
+  <% @projects.limit(3).each do |p| %>
+  <div class= "col-md-4"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+      <h2><%= p.campaign_title %> </h2>
+     <h4 class="text"><b>Summary: </b><%= p.summary %> </h4>
+     <h4><b>Amount_needed: </b><%= p.amount_needed %> </h4>
+     <h4><b>amount_achieved: </b><%= p.amount_achieved %> </h4>
+     <div class="task-status">
+  <div class="status-bar">
+    <div class="status-track">
+      <span class="status-text">{{status}}</span>
+      <div class="status-fill" style="width:{{status}}"></div>
+    </div>
+  </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
+
+<div class ="container">
+ <div class="row">
+  <h1 class="description">Disasters.</h1><h4 style="padding-left: 90%; top: 20px;"><%=link_to "See All"%></h4>
+  <% @projects.limit(3).each do |p| %>
+  <div class= "col-md-4"> 
+   <div class="img" style= "background-image: url(<%= p.images.first.url %>)">
+     <%= link_to "Show Me!", project_path(p), class:"linkoffun" %></div> 
+     <h2><%= p.campaign_title %> </h2>
+     <h4 class="text"><b>Summary: </b><%= p.summary %> </h4>
+     <h4><b>Amount_needed: </b><%= p.amount_needed %> </h4>
+     <h4><b>amount_achieved: </b><%= p.amount_achieved %> </h4>
+     <div class="task-status">
+  <div class="status-bar">
+    <div class="status-track">
+      <span class="status-text">{{status}}</span>
+      <div class="status-fill" style="width:{{status}}"></div>
+    </div>
+  </div>
+</div>
+   </div>
+   <% end %>
+ </div>
+</div>
+
+<% @projects.each do |p| %>
+<%= link_to "Show Me!", project_path(p), class:"linkoffun" %>
+<% end %>
 
