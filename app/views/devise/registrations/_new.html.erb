@@ -5,17 +5,17 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, placeholder:"FIRST NAME" %>
+    <%= f.text_field :first_name, autofocus: true, style:"width:250px; padding:5px;",placeholder:"FIRST NAME" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, placeholder:"LAST NAME" %>
+    <%= f.text_field :last_name, autofocus: true, style:"width:250px; padding:5px;", placeholder:"LAST NAME" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, placeholder:"EMAIL" %>
+    <%= f.email_field :email, autofocus: true, style:"width:250px; padding:5px;", placeholder:"EMAIL" %>
   </div>
 <br>
   <div class="field">
@@ -23,18 +23,18 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", placeholder:"PASSWORD" %>
+    <%= f.password_field :password, autocomplete: "off", style:"width:250px; padding:5px;", placeholder:"PASSWORD" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"CONFIRM PASSWORD" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", style:"width:250px; padding:5px;", placeholder:"CONFIRM PASSWORD" %>
   </div>
 <br>
   <div class="field">
     <%= f.label :profile_picture %><br />
 <br>
-   <%= f.file_field :avatar, autofocus: true%>
+   <%= f.file_field :avatar, autofocus: true, style:"padding-left:120px;"%>
   </div>
 
   <div class="actions">

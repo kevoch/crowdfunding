@@ -20,7 +20,8 @@
 
 
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
-<nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: rgba(0, 0, 0, 0.3); border:0px;">
+
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px; background-color: black; border:0px;">
 
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,6 +32,7 @@
         <form class="navbar-form" role="search" action="/search/" method="get">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="q" id="searchbar-form" style="background:transparent;">
+
             <div class="input-group-btn">
                 <button class="btn btn-default" type="submit" style="background:transparent;"><i class="glyphicon glyphicon-search" style="color:lightgray;"></i></button>
             </div>
@@ -43,6 +45,7 @@
     <ul class="nav navbar-nav" style="float:right;">
 
       <li><button id="news_feed_btn" class="btn btn-primary btn-md btn-modal">News Feed</button></li>
+      <li><%= link_to "Home", root_path, class:"home-navbar"%></li>
       <li><%= link_to "Discover", projects_path, class:"home-navbar"%></li>
       <li><%= link_to 'Start a campaign', new_project_path, class:"home-navbar"%></li>
       <li><%= link_to 'About Us', root_path, class:"home-navbar"%></li> <!--to add static page route for about us-->
@@ -138,7 +141,7 @@
 <div class="modal fade" id="myModal1" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" style="height:450px;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Log In</h4>
