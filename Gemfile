@@ -70,3 +70,17 @@ gem 'public_activity'
 
 gem 'fog'
 
+
+gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
+
+group :production do
+ # Heroku
+ # ==================
+ gem 'rails_12factor' # Heroku Gem Supports
+  # Using puma for
+end
+
+gem 'unicorn'
+gem 'bonsai-elasticsearch-rails'
