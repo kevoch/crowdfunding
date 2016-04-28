@@ -449,7 +449,7 @@ figure.snip-shuffle:hover img{
   display:none;
   position:absolute;
   right:0;
-  background:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.7);
   border: 10px;
   z-index:10000;
 }
@@ -459,9 +459,9 @@ figure.snip-shuffle:hover img{
  
 }
 .activity{
-  padding:5px;
+  padding:10px;
   text-align: right;
-  font-size: 18px;
+  font-size: 16px;
   font-family: courier;
 }
 
