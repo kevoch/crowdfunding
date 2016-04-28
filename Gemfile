@@ -68,3 +68,5 @@ gem 'cancancan', '~> 1.10'
 
 gem 'public_activity'
 
+gem 'fog'
+
